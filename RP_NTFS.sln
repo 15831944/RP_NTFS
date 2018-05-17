@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPQCSharp", "TestPQCShar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPQWin", "TestPQWin\TestPQWin.csproj", "{7A6040C8-4974-4F7B-AACA-B4D8E828546E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{54A1E35E-6A1B-43BD-B425-D416485038B9}"
+	ProjectSection(SolutionItems) = preProject
+		PQ可以使用的bin.rar = PQ可以使用的bin.rar
+		仿真软驱文件传输 库 及 例子.zip = 仿真软驱文件传输 库 及 例子.zip
+		说明.txt = 说明.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

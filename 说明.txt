@@ -1,0 +1,41 @@
+//DLL导出函数
+1.int TestInitializeFuction(char* m_way,int NodeNum,int Speed,int Mode) //初始化串口
+ (char* /*通道的串口名称*/,int []/*通道实际节点个数*/,int []/*通道的通信速度标志*/, int []/*工作方式*/)   
+返回值：0 两个通道打开失败；1 通道一成功，通道二失败，2 通道一失败，通道二成功；3 两个通道打开成功
+
+//PQ的参数 char * m_way="COM3";int NodeNum = 1;int Speed = 3;int Mode = 4 ;
+
+
+2.int TestUnInitializeFuction() //释放通道
+
+返回值：1 成功
+
+3.int TestSendFuction(char* m_strPath，int Num) //发送文件
+返回值：0.失败 1.成功 2.超时一分钟
+//PQ的参数  int Num = 1；
+
+4.int TestClearFuction(int Num) //清空所有文件
+返回值：0.失败 1.成功 2.超时一分钟
+//PQ的参数  int Num = 1；
+
+注：发送文件 和 清空所有文件函数使用之前必须先进行初始化串口。
+
+
+
+平强要求：
+1.上传文件时候需要保留的文件名（只需要铜工编号＋粗中精）
+  例如 生成前：16695-SS001-51-F1.nc
+       生成后：51-F1.nc（保留第二个'-'的后面几位）
+注：平强铜工编号最多只有百位
+
+2.操作步骤要少
+
+3.设计的时候要考虑把退出和清除文件分开（清除文件函数使用之前也需要初始化通道）。
+
+4.清空通道的函数使用也需要进行通道初始化。
+
+5.要考虑是否改名后的文件重复上传的问题。
+
+
+
+  
