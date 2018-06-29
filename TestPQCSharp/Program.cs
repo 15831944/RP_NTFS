@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Linq;
 
 namespace TestPQCSharp
 {
@@ -9,25 +10,18 @@ namespace TestPQCSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("请输入路径");
-            var i = Console.ReadLine();
-            Console.WriteLine("请输入Com值");
-            var com = Console.ReadLine();
-            Console.WriteLine("请输入Node值");
-            var node = int.Parse(Console.ReadLine());
-            do
+            try
             {
-                try
-                {
-                    DirectoryInfo info = new DirectoryInfo(i);
-                    new Floppy().SendFuction(com, node, info);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
+                Console.WriteLine("entry Floppy");
+                args.ToList().ForEach(u => {
+                    Console.WriteLine(u);
+                });
+                new FloppyEx().SendFuction(args[0], int.Parse(args[1]), new DirectoryInfo(args[2]));
             }
-            while (!string.IsNullOrEmpty(Console.ReadKey().KeyChar.ToString()));
+            catch (Exception ex)
+            {
+                Console.WriteLine("&&FloppyTestPQCSharp&&" + ex.Message+ "&&EndFloppyTestPQCSharp&&");
+            }
         }
     }
 }
